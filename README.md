@@ -27,7 +27,7 @@ $ wget https://gist.githubusercontent.com/dz1984/e52d3e226e28ec2ca66b/raw/22529e
 
 $ docker build -t eia-crawler .
 
-# docker run -d -v $(pwd)/data:/data eia-crawler bash -c "scrapy crawl lists && scrapy crawl details && cp -r results/ /data"
+$ docker run -d -v $(pwd)/data:/data eia-crawler bash -c "scrapy crawl lists && scrapy crawl details && cp -r results/ /data"
 ```
 
 ## 使用方式
