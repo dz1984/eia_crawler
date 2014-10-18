@@ -10,12 +10,24 @@
 
 ## Vagrant
 
-若是想用 Vagrant 也可以參考Gist上的 [Vagrant File](https://gist.github.com/dz1984/11130582) (假設已經有vagrant環境)。
+若是想用 Vagrant 也可以參考Gist上的 [Vagrant File](https://gist.github.com/dz1984/11130582) (假設已經有 Vagrant 環境)。
 
 ``` shell
 $ wget https://gist.githubusercontent.com/dz1984/11130582/raw/Vagrantfile
 
 $ vagrant up
+```
+
+## Docker
+
+可執行下面指令， 建立 Docker container 在背景爬資料，爬完後的檔案會被丟在本機的 `./data/`　裡。 (前提也是要有 Docker 環境)
+
+``` shell
+$ wget https://gist.githubusercontent.com/dz1984/e52d3e226e28ec2ca66b/raw/22529e0e5871cec6ab73575dc45e6801db626ba2/Dockerfile
+
+$ docker build -t eia-crawler .
+
+# docker run -d -v $(pwd)/data:/data eia-crawler bash -c "scrapy crawl lists && scrapy crawl details && cp -r results/ /data"
 ```
 
 ## 使用方式
